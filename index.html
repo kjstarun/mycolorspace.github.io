@@ -15,7 +15,7 @@
 
     #body {
         height: auto;
-        background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+        background-image: linear-gradient(to right, #051937, #a8eb12);
         display: flex;
         flex-direction: column;
         /* justify-content: center; */
@@ -81,19 +81,26 @@
     .direction-form {
         display: flex;
         flex-direction: row;
-        gap: 20px;
+        justify-content: center;
+        padding-top: 15px;
+        gap: 40px;
         height: 125px;
-        width: 300px;
-        background-color: #051937;
+        width: 500px;
+        /* background-color: #051937; */
     }
 
     input[type="radio"] {
+        /* height: 50px; */
         position: absolute;
         opacity: 0;
+        padding: 5px;
     }
 
     input[type="radio"]:checked+svg {
         fill: blue;
+        border: 1px solid white;
+        /* padding: 5px; */
+        border-radius: 50px;
     }
 
     svg {
@@ -228,39 +235,75 @@
             <!-- <div class="arrows">
                 <input type="radio" name="direction" id="direction">
             </div> -->
-            <!-- <form class="direction-form">
-                <label for="up">
-                    <input type="radio" name="direction" value="super-happy" />
-                    <svg id="_1-Arrow_Up" data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                        <title>1-Arrow Up</title>
-                        <path d="M26.71,10.29l-10-10a1,1,0,0,0-1.41,0l-10,10,1.41,1.41L15,3.41V32h2V3.41l8.29,8.29Z" />
+            <form class="direction-form">
+                <label for="up-right">
+                    <input type="radio" name="direction" value="to right top" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                     </svg>
                 </label>
 
                 <label for="right">
-                    <input type="radio" name="direction" value="happy" checked />
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
-                        <path style="fill:#fff"
-                            d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
-                            data-name="Right" />
+                    <input type="radio" name="direction" value="to right" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="100">
+                        <path
+                            d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
                     </svg>
                 </label>
 
-                <label for="down right">
-                    <input type="radio" name="direction" value="neutral" />
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                <label for="down-right">
+                    <input type="radio" name="direction" value="to right bottom" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20">
                         <path d="M17 15.586 6.707 5.293 5.293 6.707 15.586 17H7v2h12V7h-2v8.586z" />
                     </svg>
                 </label>
 
                 <label for="down">
-                    <input type="radio" name="direction" value="sad" />
-                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" xml:space="preserve">
-                        <path style="fill: #fff;"
-                            d="m61.784 60.169-8.451 8.45V20h-6.666v48.619l-8.454-8.45-4.714 4.713 14.145 14.141a3.33 3.33 0 0 0 4.713 0l14.145-14.141-4.718-4.713z" />
+                    <input type="radio" name="direction" value="to bottom" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path d="M26.29 20.29 18 28.59V0h-2v28.59l-8.29-8.3-1.42 1.42 10 10a1 1 0 0 0 1.41 0l10-10z"
+                            data-name="2-Arrow Down" />
                     </svg>
                 </label>
-            </form> -->
+
+                <label for="down-left">
+                    <input type="radio" name="direction" value="to left bottom" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="m18.707 6.707-1.414-1.414L7 15.586V7H5v12h12v-2H8.414L18.707 6.707z" />
+                    </svg>
+                </label>
+
+                <label for="left">
+                    <input type="radio" name="direction" value="to left" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path d="M32 15H3.41l8.29-8.29-1.41-1.42-10 10a1 1 0 0 0 0 1.41l10 10 1.41-1.41L3.41 17H32z"
+                            data-name="4-Arrow Left" />
+                    </svg>
+                </label>
+
+                <label for="top-left">
+                    <input type="radio" name="direction" value="to left top" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M17 7V5H5v12h2V8.414l10.293 10.293 1.414-1.414L8.414 7H17z" />
+                    </svg>
+                </label>
+
+                <label for="up">
+                    <input type="radio" name="direction" value="to top" />
+                    <svg data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z" />
+                    </svg>
+                </label>
+
+                <!-- <label for="circle">
+                    <input type="radio" name="direction" value="circle" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <path
+                            d="M16 31a14 14 0 0 1-1-28V2a1 1 0 0 1 1.55-.83l6 4a1 1 0 0 1 0 1.66l-6 4A1 1 0 0 1 15 10v-.94A8 8 0 1 0 24 17a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1 14 14 0 0 1-14 14zm1-27.13V4a1 1 0 0 1-1 1 12 12 0 1 0 12 13h-2A10 10 0 1 1 16 7a1 1 0 0 1 1 1v.13L20.2 6z"
+                            data-name="relod android app aplication phone" />
+                    </svg>
+                </label> -->
+            </form>
         </div>
         <p class="desc">Enter colours</p>
         <div class="color">
@@ -295,8 +338,16 @@
         });
         function change() {
             let code = document.getElementById("code");
-            body.style.backgroundImage = "linear-gradient(to right," + color1.value + "," + color2.value + ")";
-            code.textContent = "background - image: linear-gradient(to right," + color1.value + "," + color2.value + ")";
+            let node = document.querySelectorAll('input[name="direction"]');
+            let direction;
+            for (let i of node) {
+                if (i.checked) {
+                    direction = i.value;
+                }
+            }
+            // console.log(direction);
+            body.style.backgroundImage = "linear-gradient(" + direction + "," + color1.value + "," + color2.value + ")";
+            code.textContent = "background - image: linear-gradient(" + direction + "," + color1.value + "," + color2.value + ");";
         }
     </script>
 </body>
