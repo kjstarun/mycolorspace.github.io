@@ -14,7 +14,7 @@
     }
 
     #body {
-        height: 100vh;
+        height: auto;
         background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
         display: flex;
         flex-direction: column;
@@ -57,7 +57,7 @@
     }
 
     .input-box {
-        background-color: #00bf72;
+        /* background-color: #00bf72; */
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -71,6 +71,10 @@
         margin-bottom: 20px;
         height: 125px;
         font-weight: 800;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         /* text-shadow: 2px 3px 0px #898999; */
     }
 
@@ -78,6 +82,9 @@
         display: flex;
         flex-direction: row;
         gap: 20px;
+        height: 125px;
+        width: 300px;
+        background-color: #051937;
     }
 
     input[type="radio"] {
@@ -157,7 +164,7 @@
     .generate {
         color: #fff;
         padding: 15px 40px;
-        margin: 20px 0;
+        margin: 20px 0 60px 0;
         /* content: "\f135"; */
         border-radius: 30px;
         outline: none;
@@ -170,6 +177,37 @@
 
     .generate:hover {
         box-shadow: none;
+    }
+
+    .code-head {
+        text-align: left;
+        margin-bottom: 5px;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .code-box {
+        margin-bottom: 50px;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    code {
+        color: #fff;
+        font-size: 14px;
+        font-weight: lighter;
+        width: 100%;
+        display: block;
+        line-height: 1.4;
+        letter-spacing: 0.5px;
+        border-left: 3px solid #fff;
+        background-color: rgba(189, 189, 189, 0.1);
+        padding: 15px 8px 15px 17px;
+        border-radius: 5px;
     }
 </style>
 
@@ -190,7 +228,7 @@
             <!-- <div class="arrows">
                 <input type="radio" name="direction" id="direction">
             </div> -->
-            <form class="direction-form">
+            <!-- <form class="direction-form">
                 <label for="up">
                     <input type="radio" name="direction" value="super-happy" />
                     <svg id="_1-Arrow_Up" data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
@@ -222,6 +260,7 @@
                             d="m61.784 60.169-8.451 8.45V20h-6.666v48.619l-8.454-8.45-4.714 4.713 14.145 14.141a3.33 3.33 0 0 0 4.713 0l14.145-14.141-4.718-4.713z" />
                     </svg>
                 </label>
+            </form> -->
         </div>
         <p class="desc">Enter colours</p>
         <div class="color">
@@ -231,23 +270,33 @@
             <input type="text" name="color2" id="color02" style="background-color: #a8eb12" value="#A8EB12">
         </div>
         <button class="generate" onclick="change()">GENERATE</button>
+
+        <div class="code-box">
+            <p class="code-head">CSS Code:</p>
+            <code
+                id="code">background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);</code>
+        </div>
     </div>
     <script>
         let body = document.getElementById("body")
-        let color1 = document.getElementById("color1");
-        let color2 = document.getElementById("color2");
+        // let color1 = document.getElementById("color1");
+        // let color2 = document.getElementById("color2");
         let color1Value = document.getElementById("color01");
         let color2Value = document.getElementById("color02");
         color1.addEventListener("input", () => {
+            let color1 = document.getElementById("color1");
             color1Value.style.backgroundColor = color1.value;
             color1Value.value = color1.value;
         });
         color2.addEventListener("input", () => {
+            let color2 = document.getElementById("color2");
             color2Value.style.backgroundColor = color2.value;
             color2Value.value = color2.value;
         });
         function change() {
+            let code = document.getElementById("code");
             body.style.backgroundImage = "linear-gradient(to right," + color1.value + "," + color2.value + ")";
+            code.textContent = "background - image: linear-gradient(to right," + color1.value + "," + color2.value + ")";
         }
     </script>
 </body>
