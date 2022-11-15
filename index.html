@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        font-family: sans-serif;
+    }
+
+    #body {
+        height: 100vh;
+        background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    .header-container {
+        height: 100px;
+        width: 85%;
+        /* background-color: #051937; */
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        align-items: center;
+    }
+
+    .logo {
+        display: flex;
+        flex-direction: row;
+        /* justify-content: center; */
+        align-items: center;
+        gap: 25px;
+    }
+
+    .logo-text {
+        color: #fff;
+        display: inline-block;
+        /* font-size: 1em; */
+        font-size: large;
+        font-weight: 900
+    }
+
+    .content {
+        color: #fff;
+        text-shadow: 2px 3px 0px #898999;
+        font-size: 40px;
+        font-weight: 800;
+        margin-bottom: 35px;
+    }
+
+    .input-box {
+        background-color: #00bf72;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .choose-container {
+        color: #fff;
+        font-size: 14px;
+        margin-bottom: 20px;
+        height: 125px;
+        font-weight: 800;
+        /* text-shadow: 2px 3px 0px #898999; */
+    }
+
+    .direction-form {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    input[type="radio"] {
+        position: absolute;
+        opacity: 0;
+    }
+
+    input[type="radio"]:checked+svg {
+        fill: blue;
+    }
+
+    svg {
+        fill: #fff;
+        height: 15px;
+    }
+
+    .desc {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 800;
+    }
+
+    .color {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        margin: 20px 0;
+    }
+
+    #color01 {
+        height: 50px;
+        width: 180px;
+        border-radius: 40px;
+        border: none;
+        text-align: center;
+        color: #fff;
+        /* z-index: 99; */
+        /* background-color: transparent; */
+        /* outline: none; */
+    }
+
+    #color02 {
+        height: 50px;
+        width: 180px;
+        border-radius: 40px;
+        border: none;
+        text-align: center;
+        color: #fff;
+        /* z-index: 99; */
+        /* background-color: transparent; */
+        /* outline: none; */
+    }
+
+    #color1 {
+        background: none;
+        border: none;
+        outline: none;
+        /* position: absolute;
+        left: 35%; */
+        width: 50px;
+        height: 30px;
+        /* display: none; */
+    }
+
+    #color2 {
+        background: none;
+        border: none;
+        outline: none;
+        /* position: absolute;
+        right: 35%; */
+        width: 50px;
+        height: 30px;
+        /* display: none; */
+    }
+
+    .generate {
+        color: #fff;
+        padding: 15px 40px;
+        margin: 20px 0;
+        /* content: "\f135"; */
+        border-radius: 30px;
+        outline: none;
+        border: none;
+        font-size: 14px;
+        letter-spacing: 0.1em;
+        background-color: #00c9b7;
+        box-shadow: 10px 10px 14px 1px rgb(0 0 0 / 20%);
+    }
+
+    .generate:hover {
+        box-shadow: none;
+    }
+</style>
+
+<body id="body">
+    <header class="header-container">
+        <div class="logo">
+            <img src="https://mycolor.space/img/color-space-logo.png" alt="color space logo" title="Color Space"
+                height="30px">
+            <div class="logo-text">ColorSpace</div>
+        </div>
+    </header>
+    <div class="content-container">
+        <h1 class="content">Generate a CSS Color Gradient</h1>
+    </div>
+    <div class="input-box">
+        <div class="choose-container">
+            <p class="input-head">Choose orientation</p>
+            <!-- <div class="arrows">
+                <input type="radio" name="direction" id="direction">
+            </div> -->
+            <form class="direction-form">
+                <label for="up">
+                    <input type="radio" name="direction" value="super-happy" />
+                    <svg id="_1-Arrow_Up" data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                        <title>1-Arrow Up</title>
+                        <path d="M26.71,10.29l-10-10a1,1,0,0,0-1.41,0l-10,10,1.41,1.41L15,3.41V32h2V3.41l8.29,8.29Z" />
+                    </svg>
+                </label>
+
+                <label for="right">
+                    <input type="radio" name="direction" value="happy" checked />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25">
+                        <path style="fill:#fff"
+                            d="m17.5 5.999-.707.707 5.293 5.293H1v1h21.086l-5.294 5.295.707.707L24 12.499l-6.5-6.5z"
+                            data-name="Right" />
+                    </svg>
+                </label>
+
+                <label for="down right">
+                    <input type="radio" name="direction" value="neutral" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                        <path d="M17 15.586 6.707 5.293 5.293 6.707 15.586 17H7v2h12V7h-2v8.586z" />
+                    </svg>
+                </label>
+
+                <label for="down">
+                    <input type="radio" name="direction" value="sad" />
+                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" xml:space="preserve">
+                        <path style="fill: #fff;"
+                            d="m61.784 60.169-8.451 8.45V20h-6.666v48.619l-8.454-8.45-4.714 4.713 14.145 14.141a3.33 3.33 0 0 0 4.713 0l14.145-14.141-4.718-4.713z" />
+                    </svg>
+                </label>
+        </div>
+        <p class="desc">Enter colours</p>
+        <div class="color">
+            <input type="color" name="color1" id="color1" value="#051937">
+            <input type="text" name="color1" id="color01" style="background-color: #051937" value="#051937">
+            <input type="color" name="color1" id="color2" value="#a8eb12">
+            <input type="text" name="color2" id="color02" style="background-color: #a8eb12" value="#A8EB12">
+        </div>
+        <button class="generate" onclick="change()">GENERATE</button>
+    </div>
+    <script>
+        let body = document.getElementById("body")
+        let color1 = document.getElementById("color1");
+        let color2 = document.getElementById("color2");
+        let color1Value = document.getElementById("color01");
+        let color2Value = document.getElementById("color02");
+        color1.addEventListener("input", () => {
+            color1Value.style.backgroundColor = color1.value;
+            color1Value.value = color1.value;
+        });
+        color2.addEventListener("input", () => {
+            color2Value.style.backgroundColor = color2.value;
+            color2Value.value = color2.value;
+        });
+        function change() {
+            body.style.backgroundImage = "linear-gradient(to right," + color1.value + "," + color2.value + ")";
+        }
+    </script>
+</body>
+
+</html>
