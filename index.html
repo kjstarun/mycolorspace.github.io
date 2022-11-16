@@ -97,15 +97,17 @@
     }
 
     input[type="radio"]:checked+svg {
-        fill: blue;
+        /* fill: blue; */
         border: 1px solid white;
+        text-align: center;
         /* padding: 5px; */
-        border-radius: 50px;
+        border-radius: 100px;
     }
 
     svg {
         fill: #fff;
-        height: 15px;
+        height: 30px;
+        width: 30px;
     }
 
     .desc {
@@ -118,8 +120,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 150px;
         margin: 20px 0;
+        width: 300px;
     }
 
     #color01 {
@@ -129,9 +132,9 @@
         border: none;
         text-align: center;
         color: #fff;
-        /* z-index: 99; */
-        /* background-color: transparent; */
-        /* outline: none; */
+        position: absolute;
+        right: 53%;
+        z-index: 10;
     }
 
     #color02 {
@@ -141,23 +144,31 @@
         border: none;
         text-align: center;
         color: #fff;
-        /* z-index: 99; */
-        /* background-color: transparent; */
-        /* outline: none; */
+        position: absolute;
+        left: 53%;
+        z-index: 10;
     }
 
+    /* .first, .second {
+        position: relative;
+        left: 0;
+    } */
+
     #color1 {
+        z-index: 1;
         background: none;
         border: none;
         outline: none;
-        /* position: absolute;
-        left: 35%; */
+        /* position: absolute; */
+        /* left: 35%; */
         width: 50px;
         height: 30px;
         /* display: none; */
+        position: relative;
     }
 
     #color2 {
+        z-index: 1;
         background: none;
         border: none;
         outline: none;
@@ -166,6 +177,7 @@
         width: 50px;
         height: 30px;
         /* display: none; */
+        position: relative;
     }
 
     .generate {
@@ -216,6 +228,11 @@
         padding: 15px 8px 15px 17px;
         border-radius: 5px;
     }
+
+    /* .first,
+    .second {
+        position: relative;
+    } */
 </style>
 
 <body id="body">
@@ -237,14 +254,14 @@
             </div> -->
             <form class="direction-form">
                 <label for="up-right">
-                    <input type="radio" name="direction" value="to right top" />
+                    <input type="radio" name="direction" value="linear-gradient(to right top" checked />
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                         <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z" />
                     </svg>
                 </label>
 
                 <label for="right">
-                    <input type="radio" name="direction" value="to right" />
+                    <input type="radio" name="direction" value="linear-gradient(to right" />
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="100">
                         <path
                             d="M11.293 4.707 17.586 11H4v2h13.586l-6.293 6.293 1.414 1.414L21.414 12l-8.707-8.707-1.414 1.414z" />
@@ -252,65 +269,73 @@
                 </label>
 
                 <label for="down-right">
-                    <input type="radio" name="direction" value="to right bottom" />
+                    <input type="radio" name="direction" value="linear-gradient(to right bottom" />
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20">
                         <path d="M17 15.586 6.707 5.293 5.293 6.707 15.586 17H7v2h12V7h-2v8.586z" />
                     </svg>
                 </label>
 
                 <label for="down">
-                    <input type="radio" name="direction" value="to bottom" />
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <input type="radio" name="direction" value="linear-gradient(to bottom" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="height: 20px">
                         <path d="M26.29 20.29 18 28.59V0h-2v28.59l-8.29-8.3-1.42 1.42 10 10a1 1 0 0 0 1.41 0l10-10z"
                             data-name="2-Arrow Down" />
                     </svg>
                 </label>
 
                 <label for="down-left">
-                    <input type="radio" name="direction" value="to left bottom" />
+                    <input type="radio" name="direction" value="linear-gradient(to left bottom" />
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                         <path d="m18.707 6.707-1.414-1.414L7 15.586V7H5v12h12v-2H8.414L18.707 6.707z" />
                     </svg>
                 </label>
 
                 <label for="left">
-                    <input type="radio" name="direction" value="to left" />
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <input type="radio" name="direction" value="linear-gradient(to left" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="width: 22px;height:22px">
                         <path d="M32 15H3.41l8.29-8.29-1.41-1.42-10 10a1 1 0 0 0 0 1.41l10 10 1.41-1.41L3.41 17H32z"
                             data-name="4-Arrow Left" />
                     </svg>
                 </label>
 
                 <label for="top-left">
-                    <input type="radio" name="direction" value="to left top" />
+                    <input type="radio" name="direction" value="linear-gradient(to left top" />
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                         <path d="M17 7V5H5v12h2V8.414l10.293 10.293 1.414-1.414L8.414 7H17z" />
                     </svg>
                 </label>
 
                 <label for="up">
-                    <input type="radio" name="direction" value="to top" />
-                    <svg data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                    <input type="radio" name="direction" value="linear-gradient(to top" />
+                    <svg data-name="1-Arrow Up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"
+                        style="height: 22px;">
                         <path d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z" />
                     </svg>
                 </label>
 
-                <!-- <label for="circle">
-                    <input type="radio" name="direction" value="circle" />
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <label for="circle">
+                    <input type="radio" name="direction" value="radial-gradient(circle" />
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" style="height: 22px;">
                         <path
                             d="M16 31a14 14 0 0 1-1-28V2a1 1 0 0 1 1.55-.83l6 4a1 1 0 0 1 0 1.66l-6 4A1 1 0 0 1 15 10v-.94A8 8 0 1 0 24 17a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1 14 14 0 0 1-14 14zm1-27.13V4a1 1 0 0 1-1 1 12 12 0 1 0 12 13h-2A10 10 0 1 1 16 7a1 1 0 0 1 1 1v.13L20.2 6z"
                             data-name="relod android app aplication phone" />
                     </svg>
-                </label> -->
+                </label>
+                <!-- <i class="fa fa-arrow-right degtop" aria-hidden="true"></i> -->
             </form>
         </div>
         <p class="desc">Enter colours</p>
         <div class="color">
-            <input type="color" name="color1" id="color1" value="#051937">
-            <input type="text" name="color1" id="color01" style="background-color: #051937" value="#051937">
-            <input type="color" name="color1" id="color2" value="#a8eb12">
-            <input type="text" name="color2" id="color02" style="background-color: #a8eb12" value="#A8EB12">
+            <div class="first">
+                <input type="color" name="color1" id="color1" value="#051937">
+                <input type="text" name="color1" id="color01" style="background-color: #051937" value="#051937"
+                    onclick="triggerFirstColorInput()">
+            </div>
+            <div class="second">
+                <input type="color" name="color1" id="color2" value="#a8eb12">
+                <input type="text" name="color2" id="color02" style="background-color: #a8eb12" value="#A8EB12"
+                    onclick="triggerSecondColorInput()">
+            </div>
         </div>
         <button class="generate" onclick="change()">GENERATE</button>
 
@@ -346,8 +371,19 @@
                 }
             }
             // console.log(direction);
-            body.style.backgroundImage = "linear-gradient(" + direction + "," + color1.value + "," + color2.value + ")";
-            code.textContent = "background - image: linear-gradient(" + direction + "," + color1.value + "," + color2.value + ");";
+            console.log(color1.value, color2.value);
+            body.style.backgroundImage = direction + "," + color1.value + "," + color2.value + ")";
+            code.textContent = "background - image:" + direction + "," + color1.value + "," + color2.value + ");";
+        }
+
+        function triggerFirstColorInput() {
+            let firstColor = document.getElementById("color1");
+            firstColor.click();
+        }
+
+        function triggerSecondColorInput() {
+            let SecondColor = document.getElementById("color2");
+            SecondColor.click();
         }
     </script>
 </body>
